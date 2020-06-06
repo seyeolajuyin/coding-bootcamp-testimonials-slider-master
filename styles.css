@@ -81,10 +81,43 @@ body {
   flex-direction: column;
 }
 .author-info span {
-  font-weight: 300;
-  color: hsl(240, 18%, 77%);
+  font-weight: 500;
+  color: hsl(240, 97%, 60%);
+}
+.buttons {
+  position: absolute;
+  width: 90px;
+  height: 45px;
+  box-shadow: -20px 12px 20px 0px hsl(240, 18%, 77%);
+  border-radius: 50px;
+  background-color: #ffffff;
+}
+.prev,
+.next {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+}
+.next::after,
+.prev::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
 }
 
+.next::after {
+  background-image: url(/images/icon-next.svg);
+}
+
+.prev::after {
+  background-image: url(/images/icon-prev.svg);
+}
 .slide-2 {
   display: none;
 }
