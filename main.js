@@ -1,11 +1,34 @@
 const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
-const slides = document.querySelector(".slide");
+const slides = document.querySelectorAll(".slide");
 
-function nextSlide() {
-  slides.array.forEach((slide) => {
+let index = 0;
+display(index);
+//function for slide animation
+function display(index) {
+  slides.forEach((slide) => {
     slide.style.display = "none";
   });
+  slides[index].style.display = "flex";
+}
+
+//function for next button
+function nextSlide() {
+  index++;
+  if (index > slides.length - 1) {
+    index = 0;
+  }
+  display(index);
+}
+
+//function for previous button
+function prevSlide() {
+  index--;
+  if (index < 0) {
+    index = slides.length - 1;
+  }
+  display(index);
 }
 
 next.addEventListener("click", nextSlide);
+prev.addEventListener("click", prevSlide);
